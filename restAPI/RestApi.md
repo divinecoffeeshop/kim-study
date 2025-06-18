@@ -43,8 +43,10 @@ RESTful API는 **REST 아키텍처 스타일**을 따르는 웹 API 설계 방�
 
 ##  예시
 
-```http
 GET /users/1        → 사용자 조회
 POST /users         → 사용자 생성
 PUT /users/1        → 사용자 정보 수정
 DELETE /users/1     → 사용자 삭제
+
+
+
