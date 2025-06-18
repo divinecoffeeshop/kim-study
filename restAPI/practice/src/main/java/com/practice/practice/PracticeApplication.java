@@ -18,7 +18,7 @@ public class PracticeApplication {
 class AController {
     @GetMapping("/practice1")
     public response practice() {
-        return new response("this is to test api");
+        return new response("this is to test api practice");
     }
 }
 
