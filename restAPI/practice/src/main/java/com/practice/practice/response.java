@@ -1,9 +1,9 @@
 package com.practice.practice;
 
-public class response {
+public class Response {
     private String message;
 
-    public response(String message) {
+    public Response(String message) {
         this.message = message;
     }
 
