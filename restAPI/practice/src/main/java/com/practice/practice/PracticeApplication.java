@@ -10,8 +10,7 @@ public class PracticeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
-        Response a = new Response("this is to test api practice restAPI");
-        System.out.println(a.getMessage());
+  
 	}
 
 }
@@ -26,8 +25,8 @@ public class PracticeApplication {
 class GetController {
     //http://localhost:8080/practice1
     @GetMapping("/practice1")
-    public Response practice() {
-        return new Response("this is to test api practice restAPI");
+    public String practice() {
+        return ("this is to test api practice restAPI");
     }
 }
 
