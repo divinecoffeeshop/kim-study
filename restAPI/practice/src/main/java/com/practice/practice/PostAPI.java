@@ -8,6 +8,7 @@ public class PostAPI {
     // http://localhost:8080/api/v1/post_test
     @PostMapping("/api/v1/post_test")
     public String postTest(@RequestBody postDTO postdto) {
-        return (postdto.getApiKey()); // apikey1
+        System.out.println("apiKey: " + postdto.getApiKey());
+        return ("apikey: " + postdto.getApiKey()); 
     }
 }
