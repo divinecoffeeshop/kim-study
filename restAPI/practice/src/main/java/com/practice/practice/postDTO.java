@@ -13,8 +13,8 @@ public class postDTO {
     private String version;
     private String method;
     private String msg;
-    private boolean isDeleted;
-    private LocalDateTime createdDt;
+    private boolean isDeleted = false;  // default false
+    private LocalDateTime createdDt = LocalDateTime.now(); // created date
     private LocalDateTime deletedDt;
 
     public String getApiKey() {
