@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class postDTO {
+public class PostDTO {
     private String apiKey;
     private String requestId;
     private String uriPath;
