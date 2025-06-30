@@ -1,21 +1,29 @@
-package com.practice.practice;
+package com.practice.practice.Post;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.practice.practice.Entity.ApiRepository;
+import com.practice.practice.Entity.ApiTestEntity;
+
 
 // http://localhost:8080/api/v1/post_test
 @RestController
 public class PostAPI {
-    @Autowired
+    
     private ApiRepository repository;
+    public PostAPI(ApiRepository repository){
+        this.repository = repository;
+    }
 
     @PostMapping("/api/v1/post_test")
-    public ResponseEntity<String> postTest(@RequestBody PostDTO postdto) {
+    public ResponseEntity<Map<String, Object>> postTest(@RequestBody PostDTO postdto) {
         try {
             ApiTestEntity entity = new ApiTestEntity();
             entity.setApiKey(postdto.getApiKey());
@@ -27,11 +35,19 @@ public class PostAPI {
             entity.setCreatedDt(postdto.getCreatedDt());
 
             repository.save(entity);
-            return ResponseEntity.ok("status:" + 200 +"\n" + "saved in Table: apitest");
+            Map<String, Object> response = new HashMap<>();
+            response.put("status: ", 201);
+            response.put("response: ", "Saved successfully");
+            return ResponseEntity
+                   .status(HttpStatus.CREATED)
+                   .body(response);
         } catch (Exception e) {
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("status: ", 400);
+            errorResponse.put("response: ", "Failed to save");
             return ResponseEntity
                    .status(HttpStatus.BAD_REQUEST)
-                   .body("Failed to save: " + e.getMessage());
+                   .body(errorResponse);
         }
     }
 }

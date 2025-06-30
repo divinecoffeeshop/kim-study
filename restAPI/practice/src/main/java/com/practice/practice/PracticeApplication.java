@@ -2,8 +2,7 @@ package com.practice.practice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 
 @SpringBootApplication
 public class PracticeApplication {
@@ -21,12 +20,6 @@ public class PracticeApplication {
  4. 반환된 Response 객체가 JSON으로 변환되어 클라이언트에 전달됨
  5. 브라우저에서 응답 내용 확인 가능
  */
-@RestController
-class GetController {
-    //http://localhost:8080/practice1
-    @GetMapping("/practice1")
-    public String practice() {
-        return ("this is to test api practice restAPI");
-    }
-}
+
+
 
