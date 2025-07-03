@@ -12,3 +12,4 @@ Spring Boot에서 Repository는 데이터베이스와의 상호작용을 담당�
 public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByName(String name); 
 }
+url: https://velog.io/@kevin_/%EB%82%B4%EA%B0%80-repository.save%EB%A5%BC-%ED%86%B5%ED%95%B4%EC%84%9C-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%A0%80%EC%9E%A5%EC%8B%9C%EC%BC%B0%EB%8D%98-%EC%9D%B4%EC%9C%A0

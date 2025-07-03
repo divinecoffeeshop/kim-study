@@ -35,3 +35,13 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Spring Boot ###
+application.properties
+application.yml
+
+### Test Output ###
+test-output/
+
+### macOS ###
+.DS_Store
