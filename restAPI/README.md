@@ -33,3 +33,22 @@ curl -X GET "http://localhost:8080/api/v1/get_test/apikey23"
 
 curl -X DELETE "http://localhost:8080/api/v1/delete_test/apikey23"
 - api_key:apikey23에 해당되는 레코드들 삭제
+
+## Docker
+### 이미지 빌드
+docker build -t my-spring-test . 
+
+### 컨테이너 실행
+docker run -p 8080:8080 my-spring-test
+
+## Extra
+resource 폴더안에 application.properties만들고 밑에 내용 집어넣을것
+spring.application.name=practice
+spring.datasource.url=jdbc:mysql://34.64.244.98:3306/testapi?serverTimezone=UTC&useSSL=false
+spring.datasource.username=아이디 알아서
+spring.datasource.password=
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
