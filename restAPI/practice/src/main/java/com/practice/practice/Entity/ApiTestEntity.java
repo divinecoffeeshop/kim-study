@@ -1,21 +1,50 @@
-package com.practice.practice;
+package com.practice.practice.Entity;
 
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
+@Entity
+@Table(name = "apitest")
+public class ApiTestEntity {
 
-@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PostDTO {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idx;
+
+    @Column(name = "api_key")
     private String apiKey;
+
+    @Column(name = "request_id")
     private String requestId;
+
+    @Column(name = "uri_path")
     private String uriPath;
+
+    @Column(name = "version")
     private String version;
+
+    @Column(name = "method")
     private String method;
+
+    @Column(name = "msg")
     private String msg;
-    private boolean isDeleted = false;  // default false
-    private LocalDateTime createdDt = LocalDateTime.now(); // created date
+
+    @Column(name = "is_deleted")
+    private boolean isDeleted = false;
+
+    @Column(name = "created_dt")
+    private LocalDateTime createdDt = LocalDateTime.now();
+
+    @Column(name = "deleted_dt")
     private LocalDateTime deletedDt;
+
+    public int getIdx() {
+        return idx;
+    }
+
+    public void setIdx(int idx) {
+        this.idx = idx;
+    }
 
     public String getApiKey() {
         return apiKey;
@@ -64,26 +93,27 @@ public class PostDTO {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
     public boolean isDeleted() {
         return isDeleted;
     }
-    
-    public void setDeleted(boolean isDeleted) {
-        this.isDeleted = isDeleted;
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
-    
+
     public LocalDateTime getCreatedDt() {
         return createdDt;
     }
-    
+
     public void setCreatedDt(LocalDateTime createdDt) {
         this.createdDt = createdDt;
     }
-    
+
     public LocalDateTime getDeletedDt() {
         return deletedDt;
     }
-    
+
     public void setDeletedDt(LocalDateTime deletedDt) {
         this.deletedDt = deletedDt;
     }
